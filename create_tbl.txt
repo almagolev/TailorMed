@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS public.tailormed
+(
+    id serial,
+    name text unique NOT NULL,
+    status text NOT NULL CHECK (status = ANY(ARRAY['open','closed'])),
+    treatments text NOT NULL,
+    amount text NOT NULL
+)
