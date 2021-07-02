@@ -34,9 +34,6 @@ def doAll(res):
         conn.commit()
     except:
         """print(" BLAH ")"""
-
-    conn = psycopg2.connect(dbname='postgres',host='localhost',port='5432', user='postgres', password='postgres')
-    cur = conn.cursor()
     
     try:
         #UPDATE
@@ -46,8 +43,6 @@ def doAll(res):
         """print(" BLAH 2")"""
 
     #GET DATA FROM DB AND PRINT
-    conn = psycopg2.connect(dbname='postgres',host='localhost',port='5432', user='postgres', password='postgres')
-    cur = conn.cursor()
     results = cur.execute("SELECT * FROM public.tailormed")
     row = cur.fetchone()
     while row is not None:
